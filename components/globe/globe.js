@@ -1,11 +1,13 @@
 import React, { useRef, useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
-import arcsData from '../data/data';
-import places from '../data/places';
-import btnJoin from './components/btn_join'
+import arcsData from '../../data/data';
+import places from '../../data/places';
+// import btnJoin from '../pages/components/btn_join'
+// import { RootLayout } from "./--";
 const Globe = dynamic(() => import('react-globe.gl'), { ssr: false });
 
-const IndexPage = () => {
+
+const GlobePage = () => {
   const globeEl = useRef();
 
   useEffect(() => {
@@ -18,8 +20,8 @@ const IndexPage = () => {
 
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
-      <btnJoin/>
-      asdasdasd
+      
+
       <Globe ref={globeEl}
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
         backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
@@ -52,4 +54,4 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage;
+export default GlobePage;
