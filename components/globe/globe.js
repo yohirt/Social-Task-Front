@@ -21,7 +21,6 @@ const GlobePage = () => {
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
       
-
       <Globe ref={globeEl}
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
         backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
