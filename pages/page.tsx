@@ -2,6 +2,7 @@
 import React from 'react'
 import Layout from './layout'
 import GlobePage from '../components/globe/globe'
+import Head from 'next/head'
 
 
 export default function Home() {

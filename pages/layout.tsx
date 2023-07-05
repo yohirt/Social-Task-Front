@@ -1,11 +1,42 @@
-// pages/layout.tsx
-import React from 'react'
+import React from 'react';
+import Head from 'next/head';
+
 
 export default function Layout({ children }) {
   return (
     <div>
-      <header>Header</header>
+      <Head>
+        <link rel="stylesheet" href="style.css" />
+      </Head>
+      sdfsdfsdf
+      <div class="space-y-4">
+  <div class="w-96 bg-white shadow rounded">
+      w-96
+  </div>
+  <div class="w-80 bg-white shadow rounded">
+      w-80
+  </div>
+  <div class="w-72 bg-white shadow rounded">
+      w-72
+  </div>
+  <div class="w-64 bg-white shadow rounded">
+      w-64
+  </div>
+  <div class="w-60 bg-white shadow rounded">
+      w-60
+  </div>
+  <div class="w-56 bg-white shadow rounded">
+      w-56
+  </div>
+  <div class="w-52 bg-white shadow rounded">
+      w-52
+  </div>
+  <div class="w-48 bg-white shadow rounded">
+      w-48
+  </div>
+</div>
       <main>{children}</main>
+
       <footer>Footer</footer>
     </div>
   )
