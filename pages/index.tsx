@@ -38,7 +38,7 @@ const GlobePage = () => {
       <Intro></Intro>
       <div style={{ width: '100vw', height: '100vh' }}>
         <button onClick={handleAddPlace}>Dodaj miejsce</button>
-        <Globe
+        <Globe 
           ref={globeEl}
           globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
           backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
