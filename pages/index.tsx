@@ -45,18 +45,18 @@ const GlobePage = () => {
           arcsData={arcsData}
           arcColor={'color'}
           arcDashLength={() => 0.5}
-          arcDashGap={(d) => 1 - (d.stroke - 0.1)}
+          // arcDashGap={(d) => 1 - (d?.stroke ?? 0.1)}
           arcDashAnimateTime={(d) => 5000}
           arcStroke={'stroke'}
           arcCircularResolution={64}
           arcLabel={() => 'test'}
-          labels
-          labelsData={places}
-          labelLat={(d) => d.lat}
-          labelLng={(d) => d.lng}
-          labelText={(d) => d.name}
-          labelSize={(d) => 0.5 + d.size}
-          labelDotRadius={(d) => 0.5 + d.size}
+          // labels
+          // labelsData={places}
+          // labelLat={(d) => d.lat}
+          // labelLng={(d) => d.lng}
+          // labelText={(d) => d.name}
+          // labelSize={(d) => 0.5 + d.size}
+          // labelDotRadius={(d) => 0.5 + d.size}
           labelColor={() => 'rgba(255, 165, 0, 0.75)'}
           labelResolution={2}
           // bars
