@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import arcsData from '../data/data';
 import placesData from '../data/places';
 import Layout from './layout';
+import Intro from '../components/intro';
 const Globe = dynamic(() => import('react-globe.gl'), { ssr: false });
 
 const GlobePage = () => {
@@ -15,10 +16,11 @@ const GlobePage = () => {
     setPlaces([
       ...places,
       {
-        lat: 52.520008,
-        lng: 13.404954,
-        name: 'Berlin',
-        size: 1,
+        name: "canada",
+        lat: 56.130366,
+        lng: -106.34677099999999,
+        size: 0.39,
+        color: "white"
       },
     ]);
   };
@@ -33,7 +35,7 @@ const GlobePage = () => {
 
   return (
     <Layout children={undefined}>
-
+      <Intro></Intro>
       <div style={{ width: '100vw', height: '100vh' }}>
         <button onClick={handleAddPlace}>Dodaj miejsce</button>
         <Globe

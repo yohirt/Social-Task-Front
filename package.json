@@ -6,10 +6,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.15",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-globe.gl": "^2.24.1"
+    "react-globe.gl": "^2.24.1",
+    "sass": "^1.63.6"
   },
   "devDependencies": {
     "@types/node": "20.4.0",
