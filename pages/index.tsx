@@ -34,7 +34,7 @@ const GlobePage = () => {
   }, []);
 
   return (
-    <Layout children={undefined}>
+    <Layout>
       <Intro></Intro>
       <div style={{ width: '100vw', height: '100vh' }}>
         <button onClick={handleAddPlace}>Dodaj miejsce</button>
