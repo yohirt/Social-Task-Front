@@ -4,10 +4,25 @@ import { useState } from 'react'
 
 
 export default function Intro() {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(true)
 
+    const handleIsOpen = ()=>{
+      setIsOpen(false)
+    }
     return (
-        <div className="intro bg-trnasparent">
+        <div className="intro bg-trnasparent"
+        style={{
+          background: "rgba(0,0,0,.3)",
+          position: "fixed",
+          zIndex: 1,
+          top: "0",
+          right: "0",
+          bottom: "0",
+          left: "0",
+          opacity: !isOpen ? "0" : "1",
+          transition: "all 2s ease-in-out",
+          visibility: !isOpen ? "hidden" : "visible",
+        }}>
             <div className="relative isolate px-6 pt-14 lg:px-8">
                 <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
                     <div className="hidden sm:mb-8 sm:flex sm:justify-center">
@@ -29,6 +44,7 @@ export default function Intro() {
                         </p>
                         <div className="mt-10 flex items-center justify-center gap-x-6">
                             <a
+                            onClick={handleIsOpen}
                                 href="#"
                                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                             >
