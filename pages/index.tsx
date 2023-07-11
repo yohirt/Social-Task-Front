@@ -10,20 +10,25 @@ const Globe = dynamic(() => import('react-globe.gl'), { ssr: false });
 const GlobePage = () => {
   const globeEl = useRef();
   const [places, setPlaces] = useState(placesData);
+  const [latiude, setLatiude] = useState(0);
+  const [longitude, setLongitude] = useState(0);
 
   const handleAddPlace = () => {
-    // Dodaj nowe miejsce do tablicy places
+    // const globe = globeEl.current;
+    // globe.controls().autoRotate = true;
+    // globe.controls().autoRotateSpeed = 0.5;
     setPlaces([
       ...places,
       {
         name: "canada",
-        lat: 56.130366,
-        lng: -106.34677099999999,
-        size: 0.39,
-        color: "white"
+        lat: latiude,
+        lng: longitude,
+        size: 0.29,
+        color: "#f000"
       },
     ]);
   };
+
 
   useEffect(() => {
     // Inicjalizacja globu po załadowaniu komponentu
@@ -31,6 +36,14 @@ const GlobePage = () => {
     // globe.controls().autoRotate = true;
     // globe.controls().autoRotateSpeed = 0.5;
     // globe.pointOfView({ lat: 0, lng: 0, altitude: 4 }, 2000);
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        setLatiude(position.coords.latitude);
+        setLongitude(position.coords.longitude);
+      });
+    } else {
+      console.log("Geolocation is not available");
+    }
   }, []);
 
   return (
@@ -38,7 +51,7 @@ const GlobePage = () => {
       <Intro></Intro>
       <div style={{ width: '100vw', height: '100vh' }}>
         <button onClick={handleAddPlace}>Dodaj miejsce</button>
-        <Globe 
+        <Globe
           ref={globeEl}
           globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
           backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
@@ -66,6 +79,7 @@ const GlobePage = () => {
           hexBinResolution={4}
           hexBinMerge={true}
           enablePointerInteraction={false}
+          
         />
       </div>
     </Layout>
