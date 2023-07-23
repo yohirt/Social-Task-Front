@@ -5,6 +5,7 @@ import arcsData from '../data/data';
 import placesData from '../data/places';
 import Layout from './layout';
 import Intro from '../components/intro';
+import  ControlPanel  from "../components/ControllPanel";
 const Globe = dynamic(() => import('react-globe.gl'), { ssr: false });
 
 const GlobePage = () => {
@@ -37,7 +38,7 @@ const GlobePage = () => {
     // globe.controls().autoRotateSpeed = 0.5;
     // globe.pointOfView({ lat: 0, lng: 0, altitude: 4 }, 2000);
     if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(function(position) {
+      navigator.geolocation.getCurrentPosition(function (position) {
         setLatiude(position.coords.latitude);
         setLongitude(position.coords.longitude);
       });
@@ -50,7 +51,9 @@ const GlobePage = () => {
     <Layout>
       <Intro></Intro>
       <div style={{ width: '100vw', height: '100vh' }}>
-        <button onClick={handleAddPlace}>Dodaj miejsce</button>
+       
+
+       <ControlPanel handleAddPlace={handleAddPlace}></ControlPanel>
         <Globe
           ref={globeEl}
           globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
@@ -79,7 +82,7 @@ const GlobePage = () => {
           hexBinResolution={4}
           hexBinMerge={true}
           enablePointerInteraction={false}
-          
+
         />
       </div>
     </Layout>
