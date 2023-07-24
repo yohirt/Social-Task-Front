@@ -32,7 +32,6 @@ const GlobePage = () => {
 
 
   useEffect(() => {
-    // Inicjalizacja globu po załadowaniu komponentu
     const globe = globeEl.current;
     // globe.controls().autoRotate = true;
     // globe.controls().autoRotateSpeed = 0.5;
@@ -56,8 +55,8 @@ const GlobePage = () => {
        <ControlPanel handleAddPlace={handleAddPlace}></ControlPanel>
         <Globe
           ref={globeEl}
-          globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-          backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
+          globeImageUrl="globe/earth-night.jpg"
+          backgroundImageUrl="background/night-sky.png"
           arcsData={arcsData}
           arcColor={'color'}
           arcDashLength={() => 0.5}
