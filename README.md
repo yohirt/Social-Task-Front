@@ -1,4 +1,10 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+# TODO 
 
-Usunąć marginesy
-nie pojawia się buttonem dlaczego sprawdzić wnetrze i wy reakcie
+- Zmienić twilin na Bootstrap
+- Display the control panel when the intro is hidden: https://drive.google.com/drive/folders/1Lg0DyBRiLGLi5zg2os2Bc3Neqh2EaAHt?usp=drive_link
+
+
+&#x2714;
+    
+
+    
