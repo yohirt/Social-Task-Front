@@ -33,7 +33,9 @@ const GlobePage = () => {
   };
 
   const handleIntroClick = () => {
-    setShowIntro(false);
+    setTimeout(() => {
+      setShowIntro(false);
+    }, 2000);
   }
 
   useEffect(() => {
@@ -84,7 +86,6 @@ const GlobePage = () => {
           hexBinResolution={4}
           hexBinMerge={true}
           enablePointerInteraction={false}
-
         />
       </div>
     </Layout>
