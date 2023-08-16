@@ -5,7 +5,7 @@ import arcsData from '../data/data';
 import placesData from '../data/places';
 import Layout from './layout';
 import Intro from '../components/intro';
-import  ControlPanel  from "../components/ControllPanel";
+import ControlPanel from "../components/ControllPanel";
 const Globe = dynamic(() => import('react-globe.gl'), { ssr: false });
 
 const GlobePage = () => {
@@ -13,6 +13,8 @@ const GlobePage = () => {
   const [places, setPlaces] = useState(placesData);
   const [latiude, setLatiude] = useState(0);
   const [longitude, setLongitude] = useState(0);
+  const [showIntro, setShowIntro] = useState(true);
+  // const [showPanel, setShowPanel] = useState(false);
 
   const handleAddPlace = () => {
     // const globe = globeEl.current;
@@ -30,6 +32,11 @@ const GlobePage = () => {
     ]);
   };
 
+  const handleIntroClick = () => {
+    setTimeout(() => {
+      setShowIntro(false);
+    }, 2000);
+  }
 
   useEffect(() => {
     const globe = globeEl.current;
@@ -48,11 +55,9 @@ const GlobePage = () => {
 
   return (
     <Layout>
-      <Intro></Intro>
+      {showIntro && <Intro onClick={handleIntroClick} />}
+      {!showIntro && <ControlPanel handleAddPlace={handleAddPlace}></ControlPanel>}
       <div style={{ width: '100vw', height: '100vh' }}>
-       
-
-       <ControlPanel handleAddPlace={handleAddPlace}></ControlPanel>
         <Globe
           ref={globeEl}
           globeImageUrl="globe/earth-night.jpg"
@@ -81,7 +86,6 @@ const GlobePage = () => {
           hexBinResolution={4}
           hexBinMerge={true}
           enablePointerInteraction={false}
-
         />
       </div>
     </Layout>

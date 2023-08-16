@@ -3,12 +3,14 @@ import { useState } from 'react'
 
 
 
-export default function Intro() {
+export default function Intro({onClick}) {
     const [isOpen, setIsOpen] = useState(true)
 
-    const handleIsOpen = ()=>{
-      setIsOpen(false)
-    }
+    const handleIsOpen = () => {
+        setIsOpen(false);
+        onClick();
+      };
+    
     return (
         <div className="intro bg-trnasparent"
         style={{
